@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+:root {
+  --bg-app: #F8F9FA;
+  --bg-panel: #FFFFFF;
+  --bg-accent: #F1F3F5;
+  --text-main: #1A1C1E;
+  --text-muted: #64748B;
+  --text-dim: #94A3B8;
+  --border-subtle: #E2E8F0;
+  --border-strong: #CBD5E1;
+  --border-active: #1A1C1E;
+  --critical-muted: #E53E3E;
+  --warning-muted: #DD6B20;
+  --stable-muted: #38A169;
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background-color: var(--bg-app); color: var(--text-main); font-family: var(--font-body); font-size: 14px; -webkit-font-smoothing: antialiased; line-height: 1.5; overflow: hidden; }
+h1, h2, h3, h4 { font-family: var(--font-heading); letter-spacing: -0.02em; font-weight: 700; }
+.mono { font-family: var(--font-mono); font-size: 12px; letter-spacing: -0.01em; }
+.panel { background: var(--bg-panel); border: 1px solid var(--border-subtle); border-radius: 0; }
+.scroll-area { overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }
+.grid-main { display: grid; grid-template-columns: 240px 1fr; height: 100vh; }
+.content-area { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+.top-bar { height: 56px; border-bottom: 1px solid var(--border-subtle); background: var(--bg-panel); display: flex; align-items: center; padding: 0 24px; justify-content: space-between; }
+.status-pill { padding: 2px 8px; font-size: 10px; font-weight: 700; font-family: var(--font-mono); text-transform: uppercase; border: 1px solid transparent; }
+.status-critical { color: var(--critical-muted); border-color: var(--critical-muted); }
+.status-warning { color: var(--warning-muted); border-color: var(--warning-muted); }
+.status-stable { color: var(--stable-muted); border-color: var(--stable-muted); }
+.btn { padding: 8px 16px; font-family: var(--font-body); font-weight: 500; font-size: 13px; cursor: pointer; border: 1px solid var(--border-strong); background: var(--bg-panel); transition: all 0.2s ease; outline: none; }
+.btn:hover { background: var(--bg-accent); }
+.btn-primary { background: var(--text-main); color: white; border-color: var(--text-main); }
+.flex-between { display: flex; justify-content: space-between; alignItems: center; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.layout-grid { display: grid; gap: 16px; }
