@@ -420,11 +420,10 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ---
 
 <p align="center">
-  <img src="logo pfp.png" alt="FluxAxis" width="80" />
+  <img src="logo pfp.png" alt="FluxAxis" width="50" />
 </p>
 
 <p align="center">
   <strong>FluxAxis</strong> — Supply Chain Intelligence, Reimagined.
   <br />
-  <sub>Built with ❤️ for the Google Solution Challenge 2026</sub>
 </p>
