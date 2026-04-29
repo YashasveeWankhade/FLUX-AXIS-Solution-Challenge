@@ -3,7 +3,7 @@ import {
   motion, useMotionValue, useSpring, useTransform, animate,
 } from 'framer-motion'
 
-// ── Animated counter hook ─────────────────────────────────────────────────────
+// -- Animated counter hook -----------------------------------------------------
 function useCounter(target, duration = 2.4) {
   const count = useMotionValue(0)
   const rounded = useTransform(count, v => {
@@ -17,7 +17,7 @@ function useCounter(target, duration = 2.4) {
   return rounded
 }
 
-// ── DRS Gauge Ring ────────────────────────────────────────────────────────────
+// -- DRS Gauge Ring ------------------------------------------------------------
 function DRSGauge({ value = 18 }) {
   const r = 54
   const circ = 2 * Math.PI * r
@@ -63,26 +63,26 @@ function DRSGauge({ value = 18 }) {
   )
 }
 
-// ── Ticker ────────────────────────────────────────────────────────────────────
+// -- Ticker --------------------------------------------------------------------
 const TICKER_ITEMS = [
-  'SHA→LAX  ▲ DRS 84  CRITICAL',
-  'DXB→RTM  ▲ DRS 71  HIGH RISK',
+  'SHA to LAX  ▲ DRS 84  CRITICAL',
+  'DXB to RTM  ▲ DRS 71  HIGH RISK',
   '2,847 active shipments monitored',
   'RTM  congestion index 0.42  NOMINAL',
-  'SIN→SYD  DRS 47  WATCH',
+  'SIN to SYD  DRS 47  WATCH',
   'SLA compliance  97.2%',
   'Last model refresh  06:14 UTC',
-  'SHA→TYO  DRS 12  NOMINAL',
+  'SHA to TYO  DRS 12  NOMINAL',
 ]
 
 function LiveTicker() {
-  const text = TICKER_ITEMS.join('   ——   ')
+  const text = TICKER_ITEMS.join('    -  -    ')
   return (
     <div style={{
       borderTop: '1px solid var(--border-subtle)',
       borderBottom: '1px solid var(--border-subtle)',
       overflow: 'hidden', height: '32px', display: 'flex', alignItems: 'center',
-      background: 'rgba(0,212,170,0.02)',
+      background: 'rgba(63,108,143,0.02)',
     }}>
       <span style={{
         fontFamily: 'var(--font-mono)', fontSize: '0.65rem',
@@ -114,7 +114,7 @@ function LiveTicker() {
   )
 }
 
-// ── Background grid SVG ───────────────────────────────────────────────────────
+// -- Background grid SVG -------------------------------------------------------
 function GridBg() {
   return (
     <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', opacity: 0.06 }} xmlns="http://www.w3.org/2000/svg">
@@ -128,7 +128,7 @@ function GridBg() {
   )
 }
 
-// ── Word stagger helper ───────────────────────────────────────────────────────
+// -- Word stagger helper -------------------------------------------------------
 function AnimatedWords({ text, style, delay = 0 }) {
   const words = text.split(' ')
   return (
@@ -148,7 +148,7 @@ function AnimatedWords({ text, style, delay = 0 }) {
   )
 }
 
-// ── Hero Section ──────────────────────────────────────────────────────────────
+// -- Hero Section --------------------------------------------------------------
 export default function HeroSection() {
   const counter1 = useCounter(2847)
   const counter2 = useCounter(97.2, 2.8)
@@ -162,7 +162,7 @@ export default function HeroSection() {
       <div style={{
         position: 'absolute', top: '20%', left: '50%', transform: 'translateX(-50%)',
         width: '60vw', height: '50vh', borderRadius: '50%',
-        background: 'radial-gradient(ellipse, rgba(0,212,170,0.06) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse, rgba(63,108,143,0.06) 0%, transparent 70%)',
         pointerEvents: 'none',
       }} />
 
@@ -198,7 +198,7 @@ export default function HeroSection() {
               style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--accent)', display: 'block' }}
             />
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: 'var(--accent)', letterSpacing: '0.2em', textTransform: 'uppercase' }}>
-              Supply Chain Intelligence — MVP v0.1
+              Supply Chain Intelligence  -  MVP v0.1
             </span>
           </motion.div>
 
@@ -269,7 +269,7 @@ export default function HeroSection() {
                 fontSize: '0.9rem', letterSpacing: '0.06em', cursor: 'pointer', fontWeight: 700,
               }}
             >
-              Open Dashboard →
+              Open Dashboard  to 
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.03, borderColor: 'var(--accent)', color: 'var(--text-primary)' }}

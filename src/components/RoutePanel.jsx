@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useMotionValue, animate } from 'framer-motion'
 import { useEffect } from 'react'
 import { ROUTE_ALTERNATIVES } from '../data/mockData'
 
-// ── Animated number ───────────────────────────────────────────────────────────
+// -- Animated number -----------------------------------------------------------
 function AnimNum({ value, duration = 0.6 }) {
   const mv = useMotionValue(0)
   const [display, setDisplay] = useState(0)
@@ -18,7 +18,7 @@ function AnimNum({ value, duration = 0.6 }) {
   return <span>{display}</span>
 }
 
-// ── Confidence ring ───────────────────────────────────────────────────────────
+// -- Confidence ring -----------------------------------------------------------
 function ConfidenceRing({ value, delay = 0 }) {
   const r = 18
   const circ = 2 * Math.PI * r
@@ -54,7 +54,7 @@ function ConfidenceRing({ value, delay = 0 }) {
   )
 }
 
-// ── Route option card ─────────────────────────────────────────────────────────
+// -- Route option card ---------------------------------------------------------
 function RouteCard({ option, index, onApprove, approved }) {
   const isRecommended = option.label === 'Recommended'
   const isAir = option.label === 'Air freight'
@@ -68,7 +68,7 @@ function RouteCard({ option, index, onApprove, approved }) {
         border: `1px solid ${isRecommended ? 'var(--border-default)' : 'var(--border-subtle)'}`,
         borderRadius: 'var(--radius-md)',
         padding: '1.25rem',
-        background: isRecommended ? 'rgba(0,212,170,0.04)' : 'var(--bg-elevated)',
+        background: isRecommended ? 'rgba(63,108,143,0.04)' : 'var(--bg-elevated)',
         position: 'relative', overflow: 'hidden',
         flex: '1 1 180px',
         opacity: approved && !approved.includes(option.id) ? 0.5 : 1,
@@ -121,7 +121,7 @@ function RouteCard({ option, index, onApprove, approved }) {
         {[
           { label: 'ETA delta',  val: option.etaDelta,  warn: option.etaDelta.startsWith('+') },
           { label: 'Cost delta', val: option.costDelta, warn: option.costDelta.startsWith('+') },
-          { label: 'SLA',        val: option.slaOk ? '✓ Met' : '✗ Breach', warn: !option.slaOk },
+          { label: 'SLA',        val: option.slaOk ? 'OK Met' : 'X Breach', warn: !option.slaOk },
           { label: 'Capacity',   val: option.capacity,  warn: option.capacity === 'Limited' },
         ].map(({ label, val, warn }) => (
           <div key={label}>
@@ -146,11 +146,11 @@ function RouteCard({ option, index, onApprove, approved }) {
         fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--text-tertiary)',
         marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: 6,
       }}>
-        <span style={{ opacity: 0.5 }}>CO₂</span>
+        <span style={{ opacity: 0.5 }}>CO2</span>
         <span style={{ color: isAir ? 'var(--status-critical)' : 'var(--text-secondary)' }}>
           {option.co2Delta}
         </span>
-        {isAir && <span style={{ opacity: 0.4 }}>— air premium</span>}
+        {isAir && <span style={{ opacity: 0.4 }}> -  air premium</span>}
       </div>
 
       {/* Action button */}
@@ -169,7 +169,7 @@ function RouteCard({ option, index, onApprove, approved }) {
               color: 'var(--status-ok)', letterSpacing: '0.1em',
             }}
           >
-            ✓ APPROVED
+            OK APPROVED
           </motion.div>
         ) : (
           <motion.button
@@ -197,7 +197,7 @@ function RouteCard({ option, index, onApprove, approved }) {
   )
 }
 
-// ── Route recommendation panel ────────────────────────────────────────────────
+// -- Route recommendation panel ------------------------------------------------
 export default function RoutePanel({ alert }) {
   const [approved, setApproved] = useState([])
   const [dismissed, setDismissed] = useState(false)
@@ -318,7 +318,7 @@ export default function RoutePanel({ alert }) {
               letterSpacing: '0.1em',
             }}
           >
-            Route optimization engine is processing alternatives…
+            Route optimization engine is processing alternatives...
           </motion.div>
         )}
 
@@ -354,7 +354,7 @@ export default function RoutePanel({ alert }) {
                   color: 'var(--status-ok)', letterSpacing: '0.1em',
                 }}
               >
-                ✓ Route change submitted to carrier
+                OK Route change submitted to carrier
               </motion.div>
             )}
           </motion.div>

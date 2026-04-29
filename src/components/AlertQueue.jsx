@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence, useMotionValue, animate } from 'framer-motion'
 import { INITIAL_ALERTS } from '../data/mockData'
 
-// ── DRS animated bar ──────────────────────────────────────────────────────────
+// -- DRS animated bar ----------------------------------------------------------
 function DRSBar({ value }) {
   const width = useMotionValue('0%')
   useEffect(() => {
@@ -32,12 +32,12 @@ function DRSBar({ value }) {
   )
 }
 
-// ── Severity badge ────────────────────────────────────────────────────────────
+// -- Severity badge ------------------------------------------------------------
 function SeverityBadge({ severity }) {
   const cfg = {
-    critical: { color: 'var(--status-critical)', bg: 'var(--status-critical-dim)', label: '● CRITICAL' },
-    watch:    { color: 'var(--status-watch)',    bg: 'var(--status-watch-dim)',    label: '◐ WATCH'    },
-    nominal:  { color: 'var(--status-ok)',       bg: 'var(--status-ok-dim)',       label: '○ NOMINAL'  },
+    critical: { color: 'var(--status-critical)', bg: 'var(--status-critical-dim)', label: '* CRITICAL' },
+    watch:    { color: 'var(--status-watch)',    bg: 'var(--status-watch-dim)',    label: '* WATCH'    },
+    nominal:  { color: 'var(--status-ok)',       bg: 'var(--status-ok-dim)',       label: '* NOMINAL'  },
   }[severity] ?? { color: 'var(--text-tertiary)', bg: 'transparent', label: severity.toUpperCase() }
 
   return (
@@ -56,7 +56,7 @@ function SeverityBadge({ severity }) {
   )
 }
 
-// ── Single alert row ──────────────────────────────────────────────────────────
+// -- Single alert row ----------------------------------------------------------
 function AlertRow({ alert, onDismiss, onSelect, selected }) {
   return (
     <motion.div
@@ -67,7 +67,7 @@ function AlertRow({ alert, onDismiss, onSelect, selected }) {
       transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
       onClick={() => onSelect(alert)}
       style={{
-        background: selected ? 'rgba(0,212,170,0.05)' : 'var(--bg-elevated)',
+        background: selected ? 'rgba(63,108,143,0.05)' : 'var(--bg-elevated)',
         border: `1px solid ${selected ? 'var(--border-default)' : 'var(--border-subtle)'}`,
         borderLeft: `3px solid ${alert.severity === 'critical' ? 'var(--status-critical)' : 'var(--status-watch)'}`,
         borderRadius: 'var(--radius-md)',
@@ -78,7 +78,7 @@ function AlertRow({ alert, onDismiss, onSelect, selected }) {
         overflow: 'hidden',
         position: 'relative',
       }}
-      whileHover={{ background: 'rgba(0,212,170,0.04)' }}
+      whileHover={{ background: 'rgba(63,108,143,0.04)' }}
     >
       {/* Flash overlay on entry for critical */}
       {alert.severity === 'critical' && (
@@ -156,23 +156,23 @@ function AlertRow({ alert, onDismiss, onSelect, selected }) {
             padding: '0 4px', flexShrink: 0, transition: 'color 0.15s',
           }}
         >
-          ×
+          x
         </motion.button>
       </div>
     </motion.div>
   )
 }
 
-// ── New alert ticker ──────────────────────────────────────────────────────────
+// -- New alert ticker ----------------------------------------------------------
 const SIMULATED_ALERTS = [
   {
     id: 'A005',
     shipmentId: 'CS-88412',
-    route: 'Tokyo → Los Angeles',
+    route: 'Tokyo  to  Los Angeles',
     carrier: 'MOL Marine',
     drs: 68,
     severity: 'watch',
-    trigger: 'Japan port labor action warning — 48h notice issued',
+    trigger: 'Japan port labor action warning  -  48h notice issued',
     eta: '2026-05-08',
     etaDelta: '+9h',
     value: '$740K',
@@ -181,7 +181,7 @@ const SIMULATED_ALERTS = [
   },
 ]
 
-// ── Alert Queue component ─────────────────────────────────────────────────────
+// -- Alert Queue component -----------------------------------------------------
 export default function AlertQueue({ onSelectAlert, selectedAlert }) {
   const [alerts, setAlerts]     = useState(INITIAL_ALERTS)
   const [filter, setFilter]     = useState('all')
@@ -234,7 +234,7 @@ export default function AlertQueue({ onSelectAlert, selectedAlert }) {
             </AnimatePresence>
           </div>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--text-tertiary)', letterSpacing: '0.1em', marginTop: 2 }}>
-            {critCount} CRITICAL · {watchCount} WATCH
+            {critCount} CRITICAL  -  {watchCount} WATCH
           </div>
         </div>
 

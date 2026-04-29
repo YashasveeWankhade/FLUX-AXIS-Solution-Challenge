@@ -5,7 +5,7 @@ import AlertQueue from './AlertQueue'
 import RoutePanel from './RoutePanel'
 import { ROUTE_ALTERNATIVES } from '../data/mockData'
 
-// ── Tab pill ──────────────────────────────────────────────────────────────────
+// -- Tab pill ------------------------------------------------------------------
 function Tab({ label, active, count, onClick }) {
   return (
     <motion.button
@@ -38,7 +38,7 @@ function Tab({ label, active, count, onClick }) {
   )
 }
 
-// ── Status LED row ────────────────────────────────────────────────────────────
+// -- Status LED row ------------------------------------------------------------
 function StatusLEDs() {
   const items = [
     { label: 'Ingestion',  status: 'ok'   },
@@ -67,7 +67,7 @@ function StatusLEDs() {
   )
 }
 
-// ── Dashboard section ─────────────────────────────────────────────────────────
+// -- Dashboard section ---------------------------------------------------------
 export default function DashboardSection() {
   const [activeTab, setActiveTab] = useState('alerts')
   const [selectedAlert, setSelectedAlert] = useState(null)
@@ -185,7 +185,7 @@ export default function DashboardSection() {
                     transition: 'color 0.15s',
                   }}
                 >
-                  ← BACK TO ALERTS
+                  <- BACK TO ALERTS
                 </motion.button>
                 <RoutePanel alert={selectedAlert} />
               </motion.div>
@@ -197,7 +197,7 @@ export default function DashboardSection() {
   )
 }
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+// -- Helpers -------------------------------------------------------------------
 function ROUTE_COUNT(alert) {
   return ROUTE_ALTERNATIVES[alert?.id]?.length ?? 0
 }

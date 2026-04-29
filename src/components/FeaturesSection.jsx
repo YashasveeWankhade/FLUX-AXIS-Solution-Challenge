@@ -2,7 +2,7 @@ import { useRef } from 'react'
 import { motion, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { FEATURES } from '../data/mockData'
 
-// ── 3D tilt card ──────────────────────────────────────────────────────────────
+// -- 3D tilt card --------------------------------------------------------------
 function TiltCard({ feature, index }) {
   const cardRef = useRef(null)
   const x = useMotionValue(0)
@@ -47,7 +47,7 @@ function TiltCard({ feature, index }) {
         <motion.div
           style={{
             position: 'absolute', inset: 0, borderRadius: 'inherit',
-            background: 'radial-gradient(circle at 50% 0%, rgba(0,212,170,0.06), transparent 60%)',
+            background: 'radial-gradient(circle at 50% 0%, rgba(63,108,143,0.06), transparent 60%)',
             opacity: 0, pointerEvents: 'none',
           }}
           whileHover={{ opacity: 1 }}
@@ -117,7 +117,7 @@ function TiltCard({ feature, index }) {
   )
 }
 
-// ── Section title word stagger ────────────────────────────────────────────────
+// -- Section title word stagger ------------------------------------------------
 function SectionTitle({ children }) {
   const ref = useRef()
   const isInView = useInView(ref, { once: true, margin: '0px 0px -40px 0px' })
@@ -183,7 +183,7 @@ export default function FeaturesSection() {
   )
 }
 
-// ── Architecture bridge (animated SVG connecting features → dashboard) ─────────
+// -- Architecture bridge (animated SVG connecting features  to  dashboard) ---------
 function ArchBridge() {
   const ref = useRef()
   const isInView = useInView(ref, { once: true, margin: '0px 0px -40px 0px' })
@@ -204,7 +204,7 @@ function ArchBridge() {
         position: 'relative', overflow: 'hidden',
       }}
     >
-      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 50%, rgba(0,212,170,0.04), transparent 70%)', pointerEvents: 'none' }}/>
+      <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 50%, rgba(63,108,143,0.04), transparent 70%)', pointerEvents: 'none' }}/>
 
       <div style={{ flex: '1 1 260px' }}>
         <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--accent)', letterSpacing: '0.18em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>

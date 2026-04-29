@@ -1,5 +1,5 @@
-// ── Ports ───────────────────────────────────────────────────────────────────
-// Coordinates mapped to 680×340 SVG canvas (simplified Mercator)
+// -- Ports -------------------------------------------------------------------
+// Coordinates mapped to 680x340 SVG canvas (simplified Mercator)
 export const PORTS = [
   { id: 'SHA', name: 'Shanghai',     x: 569, y: 124, status: 'critical', region: 'Asia Pacific' },
   { id: 'SIN', name: 'Singapore',    x: 536, y: 190, status: 'nominal',  region: 'Asia Pacific' },
@@ -13,7 +13,7 @@ export const PORTS = [
   { id: 'SYD', name: 'Sydney',       x: 624, y: 258, status: 'nominal',  region: 'Oceania'      },
 ]
 
-// ── Trade Lanes ──────────────────────────────────────────────────────────────
+// -- Trade Lanes --------------------------------------------------------------
 export const LANES = [
   { id: 'L01', from: 'SHA', to: 'LAX', shipments: 24, disrupted: true,  delay: 18 },
   { id: 'L02', from: 'SHA', to: 'RTM', shipments: 31, disrupted: false, delay: 0  },
@@ -27,16 +27,16 @@ export const LANES = [
   { id: 'L10', from: 'TYO', to: 'SYD', shipments: 6,  disrupted: false, delay: 0  },
 ]
 
-// ── Active Alerts ────────────────────────────────────────────────────────────
+// -- Active Alerts ------------------------------------------------------------
 export const INITIAL_ALERTS = [
   {
     id: 'A001',
     shipmentId: 'CS-88124',
-    route: 'Shanghai → Los Angeles',
+    route: 'Shanghai  to  Los Angeles',
     carrier: 'Evergreen Marine',
     drs: 84,
     severity: 'critical',
-    trigger: 'Typhoon Koinu — Port of Long Beach closure forecast +36h',
+    trigger: 'Typhoon Koinu  -  Port of Long Beach closure forecast +36h',
     eta: '2026-05-02',
     etaDelta: '+18h',
     value: '$2.4M',
@@ -46,11 +46,11 @@ export const INITIAL_ALERTS = [
   {
     id: 'A002',
     shipmentId: 'CS-88247',
-    route: 'Dubai → Rotterdam',
+    route: 'Dubai  to  Rotterdam',
     carrier: 'MSC Mediterranean',
     drs: 71,
     severity: 'critical',
-    trigger: 'Suez Canal congestion index 0.83 — 22 vessels queued',
+    trigger: 'Suez Canal congestion index 0.83  -  22 vessels queued',
     eta: '2026-05-06',
     etaDelta: '+11h',
     value: '$1.1M',
@@ -60,11 +60,11 @@ export const INITIAL_ALERTS = [
   {
     id: 'A003',
     shipmentId: 'CS-87993',
-    route: 'Rotterdam → Hamburg',
+    route: 'Rotterdam  to  Hamburg',
     carrier: 'Hapag-Lloyd',
     drs: 54,
     severity: 'watch',
-    trigger: 'North Sea wind gusts 68 knots — terminal crane ops suspended',
+    trigger: 'North Sea wind gusts 68 knots  -  terminal crane ops suspended',
     eta: '2026-04-29',
     etaDelta: '+4h',
     value: '$380K',
@@ -74,11 +74,11 @@ export const INITIAL_ALERTS = [
   {
     id: 'A004',
     shipmentId: 'CS-88301',
-    route: 'Singapore → Sydney',
+    route: 'Singapore  to  Sydney',
     carrier: 'PIL Pacific',
     drs: 47,
     severity: 'watch',
-    trigger: 'Berth congestion at Port Botany — vessel queue 8 ships',
+    trigger: 'Berth congestion at Port Botany  -  vessel queue 8 ships',
     eta: '2026-05-04',
     etaDelta: '+6h',
     value: '$610K',
@@ -87,7 +87,7 @@ export const INITIAL_ALERTS = [
   },
 ]
 
-// ── Route Alternatives ───────────────────────────────────────────────────────
+// -- Route Alternatives -------------------------------------------------------
 export const ROUTE_ALTERNATIVES = {
   'A001': [
     {
@@ -132,7 +132,7 @@ export const ROUTE_ALTERNATIVES = {
   ],
 }
 
-// ── Global Metrics ───────────────────────────────────────────────────────────
+// -- Global Metrics -----------------------------------------------------------
 export const METRICS = [
   { id: 'M1', label: 'Active shipments',  value: 2847, suffix: '',   trend: +2.4,  unit: ''  },
   { id: 'M2', label: 'System DRS avg',    value: 18,   suffix: '',   trend: -3.1,  unit: ''  },
@@ -140,13 +140,13 @@ export const METRICS = [
   { id: 'M4', label: 'SLA compliance',    value: 97.2, suffix: '%',  trend: +0.4,  unit: '%' },
 ]
 
-// ── Features ─────────────────────────────────────────────────────────────────
+// -- Features -----------------------------------------------------------------
 export const FEATURES = [
   {
     id: 'F1',
     icon: '◈',
     title: 'Proactive detection',
-    body: 'Hybrid DRS engine combines real-time geospatial lag, weather severity, and port congestion into a continuous 0–100 risk score per shipment, flagging disruptions before ETA is missed.',
+    body: 'Hybrid DRS engine combines real-time geospatial lag, weather severity, and port congestion into a continuous 0 - 100 risk score per shipment, flagging disruptions before ETA is missed.',
     stat: '4.2h',
     statLabel: 'avg detection lead time',
   },
@@ -154,7 +154,7 @@ export const FEATURES = [
     id: 'F2',
     icon: '⬡',
     title: 'Dynamic re-routing',
-    body: 'When DRS exceeds threshold, the optimization engine instantly queries alternative carriers and port pairs, ranks options by cost delta, SLA compliance, and CO₂ impact.',
+    body: 'When DRS exceeds threshold, the optimization engine instantly queries alternative carriers and port pairs, ranks options by cost delta, SLA compliance, and CO2 impact.',
     stat: '< 90s',
     statLabel: 'recommendation latency',
   },

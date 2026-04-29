@@ -2,7 +2,7 @@ import { useRef, useEffect, useState } from 'react'
 import { motion, useInView, animate } from 'framer-motion'
 import { METRICS } from '../data/mockData'
 
-// ── Animated counter ──────────────────────────────────────────────────────────
+// -- Animated counter ----------------------------------------------------------
 function Counter({ target, suffix = '', decimals = 0, delay = 0 }) {
   const [val, setVal] = useState(0)
   const ref = useRef()
@@ -22,7 +22,7 @@ function Counter({ target, suffix = '', decimals = 0, delay = 0 }) {
   return <span ref={ref}>{val}{suffix}</span>
 }
 
-// ── Sparkline SVG ─────────────────────────────────────────────────────────────
+// -- Sparkline SVG -------------------------------------------------------------
 const SPARK_DATA = [22, 19, 25, 30, 18, 22, 28, 35, 41, 25, 18, 21, 15, 18]
 
 function Sparkline({ data = SPARK_DATA, color = 'var(--accent)', delay = 0 }) {
@@ -70,7 +70,7 @@ function Sparkline({ data = SPARK_DATA, color = 'var(--accent)', delay = 0 }) {
   )
 }
 
-// ── Metric KPI card ───────────────────────────────────────────────────────────
+// -- Metric KPI card -----------------------------------------------------------
 function MetricCard({ metric, index }) {
   const ref = useRef()
   const isInView = useInView(ref, { once: true, margin: '0px 0px -60px 0px' })
@@ -97,7 +97,7 @@ function MetricCard({ metric, index }) {
       {/* Glow shard */}
       <div style={{
         position: 'absolute', top: -20, right: -20, width: 80, height: 80,
-        background: 'radial-gradient(circle, rgba(0,212,170,0.07), transparent 70%)',
+        background: 'radial-gradient(circle, rgba(63,108,143,0.07), transparent 70%)',
         borderRadius: '50%', pointerEvents: 'none',
       }}/>
 
@@ -119,7 +119,7 @@ function MetricCard({ metric, index }) {
           transition={{ delay: 0.6 + index * 0.1, type: 'spring', stiffness: 400, damping: 10 }}
           style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: trendColor }}
         >
-          {isPositive ? '↑' : '↓'} {Math.abs(metric.trend)}{metric.suffix || ''}
+          {isPositive ? 'up' : '↓'} {Math.abs(metric.trend)}{metric.suffix || ''}
         </motion.span>
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--text-tertiary)' }}>
           vs last 24h
@@ -132,14 +132,14 @@ function MetricCard({ metric, index }) {
   )
 }
 
-// ── DRS distribution bar chart ────────────────────────────────────────────────
+// -- DRS distribution bar chart ------------------------------------------------
 const DRS_BINS = [
-  { range: '0–15',  count: 1842, severity: 'nominal'  },
-  { range: '16–30', count: 614,  severity: 'nominal'  },
-  { range: '31–45', count: 218,  severity: 'nominal'  },
-  { range: '46–60', count: 98,   severity: 'watch'    },
-  { range: '61–75', count: 52,   severity: 'watch'    },
-  { range: '76–100',count: 23,   severity: 'critical' },
+  { range: '0 - 15',  count: 1842, severity: 'nominal'  },
+  { range: '16 - 30', count: 614,  severity: 'nominal'  },
+  { range: '31 - 45', count: 218,  severity: 'nominal'  },
+  { range: '46 - 60', count: 98,   severity: 'watch'    },
+  { range: '61 - 75', count: 52,   severity: 'watch'    },
+  { range: '76 - 100',count: 23,   severity: 'critical' },
 ]
 
 const COLOR = { nominal: 'var(--status-ok)', watch: 'var(--status-watch)', critical: 'var(--status-critical)' }
@@ -199,13 +199,13 @@ function DRSDistribution() {
   )
 }
 
-// ── Lane performance table ────────────────────────────────────────────────────
+// -- Lane performance table ----------------------------------------------------
 const LANE_DATA = [
-  { lane: 'Asia → Americas',  shipments: 487, onTime: 94.2, alerts: 3, trend: '↑' },
-  { lane: 'Asia → Europe',    shipments: 612, onTime: 97.8, alerts: 0, trend: '↑' },
-  { lane: 'Middle East → EU', shipments: 218, onTime: 81.4, alerts: 2, trend: '↓' },
-  { lane: 'Intra-Asia',       shipments: 344, onTime: 98.9, alerts: 0, trend: '→' },
-  { lane: 'Trans-Atlantic',   shipments: 291, onTime: 96.1, alerts: 1, trend: '↑' },
+  { lane: 'Asia  to  Americas',  shipments: 487, onTime: 94.2, alerts: 3, trend: 'up' },
+  { lane: 'Asia  to  Europe',    shipments: 612, onTime: 97.8, alerts: 0, trend: 'up' },
+  { lane: 'Middle East  to  EU', shipments: 218, onTime: 81.4, alerts: 2, trend: '↓' },
+  { lane: 'Intra-Asia',       shipments: 344, onTime: 98.9, alerts: 0, trend: ' to ' },
+  { lane: 'Trans-Atlantic',   shipments: 291, onTime: 96.1, alerts: 1, trend: 'up' },
 ]
 
 function LaneTable() {
@@ -271,7 +271,7 @@ function LaneTable() {
             </span>
             <span style={{
               fontSize: '0.75rem',
-              color: row.trend === '↑' ? 'var(--status-ok)' : row.trend === '↓' ? 'var(--status-critical)' : 'var(--text-tertiary)',
+              color: row.trend === 'up' ? 'var(--status-ok)' : row.trend === '↓' ? 'var(--status-critical)' : 'var(--text-tertiary)',
             }}>
               {row.trend}
             </span>
@@ -282,7 +282,7 @@ function LaneTable() {
   )
 }
 
-// ── Section export ────────────────────────────────────────────────────────────
+// -- Section export ------------------------------------------------------------
 export default function MetricsSection() {
   const ref = useRef()
   const isInView = useInView(ref, { once: true, margin: '0px 0px -80px 0px' })

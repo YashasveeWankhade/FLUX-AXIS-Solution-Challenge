@@ -73,7 +73,7 @@ export default function Footer() {
             style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               background: 'var(--status-ok-dim)',
-              border: '1px solid rgba(0,212,170,0.2)',
+              border: '1px solid rgba(63,108,143,0.2)',
               borderRadius: 20, padding: '5px 14px',
             }}
           >
@@ -133,7 +133,7 @@ export default function Footer() {
         }}
       >
         <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.6rem', color: 'var(--text-tertiary)', letterSpacing: '0.1em' }}>
-          © 2026 CHAINSIGHT MVP · SUPPLY CHAIN INTELLIGENCE
+          © 2026 CHAINSIGHT MVP  -  SUPPLY CHAIN INTELLIGENCE
         </span>
         <div style={{ display: 'flex', gap: 24 }}>
           {['DRS v1.4.2', 'Model refresh 06:14 UTC', 'API healthy'].map(tag => (

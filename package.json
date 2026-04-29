@@ -11,14 +11,15 @@
   "dependencies": {
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
+    "d3": "^7.9.0",
+    "dotted-map": "^2.2.3",
     "framer-motion": "^11.3.0",
     "lucide-react": "^0.460.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.22.0",
     "three": "^0.184.0",
-    "zustand": "^4.5.2",
-    "dotted-map": "^2.2.3"
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",

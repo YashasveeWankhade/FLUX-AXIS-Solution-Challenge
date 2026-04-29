@@ -9,7 +9,7 @@ import DashboardSection from './DashboardSection'
 import MetricsSection  from './MetricsSection'
 import Footer          from './Footer'
 
-// ── Cursor glow that follows the mouse ───────────────────────────────────────
+// -- Cursor glow that follows the mouse ---------------------------------------
 function CursorGlow() {
   const x = useMotionValue(-200)
   const y = useMotionValue(-200)
@@ -27,7 +27,7 @@ function CursorGlow() {
       style={{
         position: 'fixed', pointerEvents: 'none', zIndex: 0,
         width: 480, height: 480, borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(0,212,170,0.045) 0%, transparent 70%)',
+        background: 'radial-gradient(circle, rgba(63,108,143,0.045) 0%, transparent 70%)',
         translateX: '-50%', translateY: '-50%',
         left: sx, top: sy,
       }}
@@ -35,7 +35,7 @@ function CursorGlow() {
   )
 }
 
-// ── Page transition wrapper ───────────────────────────────────────────────────
+// -- Page transition wrapper ---------------------------------------------------
 function PageReveal({ children }) {
   return (
     <motion.div
@@ -48,7 +48,7 @@ function PageReveal({ children }) {
   )
 }
 
-// ── Scroll-to-top button ──────────────────────────────────────────────────────
+// -- Scroll-to-top button ------------------------------------------------------
 function ScrollTop() {
   const [visible, setVisible] = useState(false)
   useEffect(() => {
@@ -71,15 +71,15 @@ function ScrollTop() {
         background: 'var(--accent)', border: 'none',
         color: '#030A10', fontSize: '1.1rem',
         cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
-        boxShadow: '0 2px 16px rgba(0,212,170,0.3)',
+        boxShadow: '0 2px 16px rgba(63,108,143,0.3)',
       }}
     >
-      ↑
+      up
     </motion.button>
   )
 }
 
-// ── Vertical section divider ─────────────────────────────────────────────────
+// -- Vertical section divider -------------------------------------------------
 function SectionDivider() {
   return (
     <div style={{
@@ -90,11 +90,11 @@ function SectionDivider() {
   )
 }
 
-// ── App ───────────────────────────────────────────────────────────────────────
+// -- App -----------------------------------------------------------------------
 export default function App() {
   return (
     <PageReveal>
-      {/* Ambient cursor glow — desktop only */}
+      {/* Ambient cursor glow  -  desktop only */}
       <CursorGlow />
 
       {/* Fixed nav */}

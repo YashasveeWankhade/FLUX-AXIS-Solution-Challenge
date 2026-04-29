@@ -2,7 +2,7 @@ import { useState, useRef, useMemo } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { PORTS, LANES } from '../data/mockData'
 
-// ── Curved path between two ports ────────────────────────────────────────────
+// -- Curved path between two ports --------------------------------------------
 function lanePath(from, to, ports) {
   const a = ports.find(p => p.id === from)
   const b = ports.find(p => p.id === to)
@@ -13,7 +13,7 @@ function lanePath(from, to, ports) {
   return `M ${a.x} ${a.y} Q ${mx} ${my} ${b.x} ${b.y}`
 }
 
-// ── Pulsing ring on port node ────────────────────────────────────────────────
+// -- Pulsing ring on port node ------------------------------------------------
 function PulseRing({ x, y, color, delay = 0 }) {
   return (
     <>
@@ -34,7 +34,7 @@ function PulseRing({ x, y, color, delay = 0 }) {
   )
 }
 
-// ── Port node ──────────────────────────────────────────────────────────────────
+// -- Port node ------------------------------------------------------------------
 function PortNode({ port, index, onHover }) {
   const isInView = true
   const color = {
@@ -78,10 +78,10 @@ function PortNode({ port, index, onHover }) {
   )
 }
 
-// ── Animated lane path ────────────────────────────────────────────────────────
+// -- Animated lane path --------------------------------------------------------
 function LanePath({ lane, ports, index }) {
   const d = lanePath(lane.from, lane.to, ports)
-  const color = lane.disrupted ? 'var(--status-critical)' : 'rgba(0,212,170,0.35)'
+  const color = lane.disrupted ? 'var(--status-critical)' : 'rgba(63,108,143,0.35)'
   const dashArray = lane.disrupted ? '4 4' : '0'
 
   return (
@@ -98,7 +98,7 @@ function LanePath({ lane, ports, index }) {
   )
 }
 
-// ── Moving ship dot along path ────────────────────────────────────────────────
+// -- Moving ship dot along path ------------------------------------------------
 function ShipDot({ lane, ports, index }) {
   const from = ports.find(p => p.id === lane.from)
   const to   = ports.find(p => p.id === lane.to)
@@ -120,7 +120,7 @@ function ShipDot({ lane, ports, index }) {
   )
 }
 
-// ── Tooltip ───────────────────────────────────────────────────────────────────
+// -- Tooltip -------------------------------------------------------------------
 function PortTooltip({ port }) {
   if (!port) return null
   const color = { critical: 'var(--status-critical)', watch: 'var(--status-watch)', nominal: 'var(--status-ok)' }[port.status]
@@ -156,7 +156,7 @@ function PortTooltip({ port }) {
   )
 }
 
-// ── Continent outlines (very simplified polygons) ──────────────────────────────
+// -- Continent outlines (very simplified polygons) ------------------------------
 const CONTINENTS = [
   // North America
   { d: 'M 35,38 L 95,28 L 155,36 L 170,55 L 155,90 L 135,125 L 120,160 L 115,190 L 130,215 L 125,228 L 100,222 L 75,200 L 50,175 L 38,145 L 28,110 L 32,70 Z' },
@@ -192,7 +192,7 @@ export default function ShipmentMap() {
             Global trade network
           </div>
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.63rem', color: 'var(--text-tertiary)', letterSpacing: '0.1em', marginTop: 2 }}>
-            {PORTS.length} PORTS · {LANES.length} ACTIVE LANES
+            {PORTS.length} PORTS  -  {LANES.length} ACTIVE LANES
           </div>
         </div>
 
@@ -243,7 +243,7 @@ export default function ShipmentMap() {
           {/* Dot grid background */}
           <defs>
             <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
-              <circle cx="12" cy="12" r="0.7" fill="rgba(0,212,170,0.18)"/>
+              <circle cx="12" cy="12" r="0.7" fill="rgba(63,108,143,0.18)"/>
             </pattern>
           </defs>
           <rect width="680" height="340" fill="url(#dots)"/>
@@ -253,8 +253,8 @@ export default function ShipmentMap() {
             <motion.path
               key={i}
               d={c.d}
-              fill="rgba(0,212,170,0.04)"
-              stroke="rgba(0,212,170,0.09)"
+              fill="rgba(63,108,143,0.04)"
+              stroke="rgba(63,108,143,0.09)"
               strokeWidth={0.5}
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
@@ -280,13 +280,13 @@ export default function ShipmentMap() {
           {/* Equator line */}
           <motion.line
             x1={40} y1={170} x2={640} y2={170}
-            stroke="rgba(0,212,170,0.08)" strokeWidth={0.5}
+            stroke="rgba(63,108,143,0.08)" strokeWidth={0.5}
             strokeDasharray="3 6"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
           />
-          <text x={42} y={166} fill="rgba(0,212,170,0.2)" fontSize={7} fontFamily="var(--font-mono)">EQ</text>
+          <text x={42} y={166} fill="rgba(63,108,143,0.2)" fontSize={7} fontFamily="var(--font-mono)">EQ</text>
         </svg>
 
         {/* Legend */}
