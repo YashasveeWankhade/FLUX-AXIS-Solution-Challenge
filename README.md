@@ -1,26 +1,33 @@
 <p align="center">
-  <img src="logo pfp.png" alt="FluxAxis Logo" width="400" />
+  <img src="logo pfp.png" alt="FluxAxis Logo" width="500" />
 </p>
 
-<h1 align="center"> ## Supply Chain Intelligence Platform</h1>
+<h1 align="center"> Supply Chain Intelligence Platform</h1>
 
 <p align="center">
   <strong>Real-time global logistics monitoring, AI-driven risk assessment, and autonomous route optimization.</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.1.0-blue?style=for-the-badge" alt="Version" />
-  <img src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" alt="License" />
-  <img src="https://img.shields.io/badge/status-MVP-orange?style=for-the-badge" alt="Status" />
-  <img src="https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge" alt="Build" />
-  <img src="https://img.shields.io/badge/PRs-welcome-ff69b4?style=for-the-badge" alt="PRs Welcome" />
+  <img src="https://img.shields.io/badge/version-0.1.0-DC143C?style=for-the-badge" alt="Version" />
+  <img src="https://img.shields.io/badge/license-MIT-B22222?style=for-the-badge" alt="License" />
+  <img src="https://img.shields.io/badge/status-MVP-CD5C5C?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/build-passing-8B0000?style=for-the-badge" alt="Build" />
+  <img src="https://img.shields.io/badge/Claude%20Code-7F1D1D?style=for-the-badge" alt="Claude Code" />
+  <img src="https://img.shields.io/badge/Redis-C62828?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />
+  <img src="https://img.shields.io/badge/Gemini-A11B1B?style=for-the-badge&logo=google&logoColor=white" alt="Gemini" />
+  <img src="https://img.shields.io/badge/React-DC2626?style=for-the-badge&logo=react&logoColor=white" alt="React" />
+  <img src="https://img.shields.io/badge/Three.js-991B1B?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js" />
+  <img src="https://img.shields.io/badge/Node.js-B91C1C?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Express-5B0F0F?style=for-the-badge&logo=express&logoColor=white" alt="Express" />
+  <img src="https://img.shields.io/badge/TypeScript-8E1C1C?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Google%20Cloud-A52A2A?style=for-the-badge&logo=googlecloud&logoColor=white" alt="Google Cloud" />
+  <img src="https://img.shields.io/badge/Firestore-BC2F2F?style=for-the-badge&logo=firebase&logoColor=white" alt="Firestore" />
 </p>
 
 <p align="center">
   <a href="#-features">Features</a> •
   <a href="#-screenshots">Screenshots</a> •
-  <a href="#️-system-architecture">Architecture</a> •
-  <a href="#-tech-stack">Tech Stack</a> •
   <a href="#-getting-started">Quick Start</a> •
   <a href="#-project-structure">Structure</a> •
   <a href="#-contributing">Contributing</a>
@@ -28,19 +35,19 @@
 
 ---
 
-## 📋 Overview
+## Overview
 
 **FluxAxis** is an enterprise-grade supply chain intelligence platform designed to provide logistics operators with full situational awareness across global shipping networks. It combines real-time vessel tracking, AI-powered disruption risk scoring (DRS), predictive analytics, and autonomous rerouting into a single command center.
 
 > Built for the **Google Solution Challenge 2026** — addressing UN SDG 9 (Industry, Innovation & Infrastructure) and SDG 12 (Responsible Consumption & Production).
 
-### 🎯 Problem Statement
+### Problem Statement
 
 Global supply chains face $4.4 trillion in annual disruptions from weather events, geopolitical instability, port congestion, and carrier failures. Traditional logistics tools offer fragmented visibility and reactive responses. FluxAxis transforms supply chain management from reactive firefighting to proactive intelligence.
 
 ---
 
-## ✨ Features
+## Features
 
 | Category | Feature | Description |
 |:---------|:--------|:------------|
@@ -59,117 +66,17 @@ Global supply chains face $4.4 trillion in annual disruptions from weather event
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### Landing — Operator Authentication
 <p align="center">
-  <img src="docs/screenshots/landing_page.png" alt="FluxAxis Landing Page" width="90%" />
+  <img src="landing.gif" alt="FluxAxis Landing Page" width="90%" />
 </p>
 
-### Command Overview — Global Operations Center
-<p align="center">
-  <img src="docs/screenshots/overview_dashboard.png" alt="Command Overview Dashboard" width="90%" />
-</p>
-
-### Live Network — 3D Globe & Shipment Inventory
-<p align="center">
-  <img src="docs/screenshots/live_network.png" alt="Live Network Globe" width="90%" />
-</p>
-
-### Alert Command — Signal Dispatch & Triage
-<p align="center">
-  <img src="docs/screenshots/alerts_command.png" alt="Alert Command Center" width="90%" />
-</p>
-
-### Route Intelligence — 3D Visualization & AI Rerouting
-<p align="center">
-  <img src="docs/screenshots/route_intelligence.png" alt="Route Intelligence" width="90%" />
-</p>
-
-### Port Intelligence — 3D Terminal & Congestion Data
-<p align="center">
-  <img src="docs/screenshots/port_intelligence.png" alt="Port Intelligence" width="90%" />
-</p>
-
-### Analytics Hub — Throughput & Performance Metrics
-<p align="center">
-  <img src="docs/screenshots/analytics_hub.png" alt="Analytics Hub" width="90%" />
-</p>
 
 ---
 
-## 🏗️ System Architecture
-
-```mermaid
-graph TB
-    subgraph CLIENT["🖥️ Client Layer"]
-        BROWSER["Browser / React SPA"]
-        THREE["Three.js 3D Engine"]
-        D3["D3.js Data Viz"]
-        FRAMER["Framer Motion"]
-    end
-
-    subgraph APP["⚛️ Application Layer"]
-        ROUTER["React Router v6"]
-        ZUSTAND["Zustand State Store"]
-        DOMAIN["Domain Models<br/>(OOP Classes)"]
-        SIMULATION["Live Simulation Engine"]
-    end
-
-    subgraph PAGES["📄 Page Modules (12 Views)"]
-        direction LR
-        P1["HomePage"]
-        P2["LandingPage"]
-        P3["NetworkPage"]
-        P4["RiskPage"]
-        P5["RoutesPage"]
-        P6["PortsPage"]
-        P7["CarriersPage"]
-        P8["EventsPage"]
-        P9["SignalsPage"]
-        P10["AnalyticsPage"]
-        P11["FeedbackPage"]
-        P12["IntegrationsPage"]
-    end
-
-    subgraph COMPONENTS["🧩 Shared Components"]
-        LAYOUT["Layout Shell"]
-        NAVBAR["Top Navbar"]
-        MAP["ShipmentMap"]
-        ALERTS["AlertQueue"]
-        ROUTE_PANEL["RoutePanel"]
-        HERO["HeroSection"]
-    end
-
-    subgraph DATA["💾 Data Layer"]
-        MOCK["Mock Data Generator"]
-        MODELS["Shipment / Port / Alert / Integration"]
-        STORE["Centralized State"]
-    end
-
-    BROWSER --> ROUTER
-    ROUTER --> PAGES
-    PAGES --> COMPONENTS
-    COMPONENTS --> ZUSTAND
-    ZUSTAND --> DOMAIN
-    DOMAIN --> MODELS
-    SIMULATION --> ZUSTAND
-    THREE --> BROWSER
-    D3 --> BROWSER
-    FRAMER --> BROWSER
-    MOCK --> STORE
-    STORE --> ZUSTAND
-
-    style CLIENT fill:#1a1a2e,color:#e0e0e0,stroke:#3F6C8F
-    style APP fill:#16213e,color:#e0e0e0,stroke:#3F6C8F
-    style PAGES fill:#0f3460,color:#e0e0e0,stroke:#3F6C8F
-    style COMPONENTS fill:#1a1a2e,color:#e0e0e0,stroke:#3F6C8F
-    style DATA fill:#16213e,color:#e0e0e0,stroke:#3F6C8F
-```
-
----
-
-## 🔄 Data Flow — Sequence Diagram
+## Data Flow — Sequence Diagram
 
 ```mermaid
 sequenceDiagram
@@ -218,7 +125,7 @@ sequenceDiagram
 
 ---
 
-## 🔀 Application Flow — Flowchart
+## Application Flow — Flowchart
 
 ```mermaid
 flowchart TD
@@ -255,122 +162,9 @@ flowchart TD
     style EXECUTE fill:#2e7d32,color:#fff
     style MONITOR fill:#f57f17,color:#fff
 ```
+--- 
 
----
-
-## 🧠 Domain Model — Class Diagram
-
-```mermaid
-classDiagram
-    class Shipment {
-        +String id
-        +Object origin
-        +Object destination
-        +String carrier
-        +String cargoType
-        +String status
-        +Float riskScore
-        +String eta
-        +String value
-        +Float progress
-        +Array path
-        +Int containers
-        +String weight
-        +updateRisk(newScore)
-        +get drs() Int
-        +get etaFormatted() String
-    }
-
-    class Alert {
-        +String id
-        +String shipmentId
-        +String severity
-        +String message
-        +String timestamp
-        +Boolean resolved
-    }
-
-    class Port {
-        +String id
-        +String name
-        +Object coords
-        +Float congestion
-        +Int vessels
-        +String region
-        +Int throughput
-        +String weather
-        +Int berths
-        +get congestionLabel() String
-    }
-
-    class Integration {
-        +String id
-        +String name
-        +String status
-        +Int latency
-        +String type
-    }
-
-    class AppStore {
-        +Array~Shipment~ shipments
-        +Array~Port~ ports
-        +Array~Alert~ alerts
-        +Array carriers
-        +Array events
-        +Array~Integration~ integrations
-        +String systemStatus
-        +Object settings
-        +initializeSystem()
-        +triggerSimulation()
-        +resolveAlert(id)
-        +executeReroute(shipmentId, routeId)
-        +createAlert(data)
-        +requestBerthAllocation(portId)
-    }
-
-    AppStore "1" --> "*" Shipment : manages
-    AppStore "1" --> "*" Alert : dispatches
-    AppStore "1" --> "*" Port : monitors
-    AppStore "1" --> "*" Integration : connects
-    Alert --> Shipment : references
-    Shipment --> Port : origin/destination
-```
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend Core
-
-| Technology | Purpose | Badge |
-|:-----------|:--------|:------|
-| **React 18** | UI Component Library | ![React](https://img.shields.io/badge/React-18.3-61DAFB?style=flat-square&logo=react&logoColor=white) |
-| **Vite 5** | Build Tool & Dev Server | ![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?style=flat-square&logo=vite&logoColor=white) |
-| **React Router v6** | Client-Side Routing | ![React Router](https://img.shields.io/badge/React_Router-6.22-CA4245?style=flat-square&logo=reactrouter&logoColor=white) |
-| **Zustand 4** | Global State Management | ![Zustand](https://img.shields.io/badge/Zustand-4.5-443E38?style=flat-square&logo=npm&logoColor=white) |
-
-### Visualization & Animation
-
-| Technology | Purpose | Badge |
-|:-----------|:--------|:------|
-| **Three.js** | 3D Globe, Route Arcs, Terminal Viz | ![Three.js](https://img.shields.io/badge/Three.js-0.184-000000?style=flat-square&logo=threedotjs&logoColor=white) |
-| **React Three Fiber** | React bindings for Three.js | ![R3F](https://img.shields.io/badge/R3F-8.18-000000?style=flat-square&logo=threedotjs&logoColor=white) |
-| **React Three Drei** | Three.js helper components | ![Drei](https://img.shields.io/badge/Drei-9.122-000000?style=flat-square&logo=threedotjs&logoColor=white) |
-| **D3.js** | SVG charts and data-driven maps | ![D3](https://img.shields.io/badge/D3.js-7.9-F9A03C?style=flat-square&logo=d3dotjs&logoColor=white) |
-| **Framer Motion** | Page transitions & micro-animations | ![Framer](https://img.shields.io/badge/Framer_Motion-11.3-0055FF?style=flat-square&logo=framer&logoColor=white) |
-| **Dotted Map** | World map point visualization | ![DottedMap](https://img.shields.io/badge/Dotted_Map-2.2-333333?style=flat-square&logo=npm&logoColor=white) |
-
-### UI & Design System
-
-| Technology | Purpose | Badge |
-|:-----------|:--------|:------|
-| **Lucide React** | Icon system (460+ icons) | ![Lucide](https://img.shields.io/badge/Lucide-0.460-F56565?style=flat-square&logo=lucide&logoColor=white) |
-| **JetBrains Mono** | Monospace typography | ![Font](https://img.shields.io/badge/JetBrains_Mono-Google_Fonts-4285F4?style=flat-square&logo=googlefonts&logoColor=white) |
-| **CSS Custom Properties** | Dynamic theming engine | ![CSS](https://img.shields.io/badge/CSS3-Custom_Props-1572B6?style=flat-square&logo=css3&logoColor=white) |
-
----
-
-## ⚡ Getting Started
+## Getting Started
 
 ### Prerequisites
 
