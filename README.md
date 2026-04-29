@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="logo pfp.png" alt="FluxAxis Logo" width="280" />
+  <img src="logo pfp.png" alt="FluxAxis Logo" width="400" />
 </p>
 
-<h1 align="center">FluxAxis — Supply Chain Intelligence Platform</h1>
+<h1 align="center"> ## Supply Chain Intelligence Platform</h1>
 
 <p align="center">
   <strong>Real-time global logistics monitoring, AI-driven risk assessment, and autonomous route optimization.</strong>
