@@ -64,17 +64,15 @@ Global supply chains face $4.4 trillion in annual disruptions from weather event
 | 🔌 **System** | Integrations | AIS tracker, NOAA weather, customs EDI, ERP, and AI model connectors |
 | ⚙️ **System** | Settings | Theme customization, accent colors, notifications, and API management |
 
----
 
 ## Screenshots
 
 ### Landing — Operator Authentication
 <p align="center">
-  <img src="landing.gif" alt="FluxAxis Landing Page" width="90%" />
+  <img src="landing.gif" alt="FluxAxis Landing Page" width="99%" />
 </p>
 
 
----
 
 ## Data Flow — Sequence Diagram
 
